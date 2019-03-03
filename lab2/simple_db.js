@@ -115,36 +115,37 @@ createDog(kapsel);
 updateDogById(0, atos);
 
 console.log('====================');
-console.log('getAllDogs');
+console.log('GET ALL DOGS');
 console.log(getAllDogs());
 updateDogByName('Atos', erna);
 console.log(updateDogById(4, atos));
 console.log('====================');
+console.log('GET FIRST & LAST DOG');
 console.log(getFirstDog());
 console.log(getLastDog());
 
 deleteDogByName('Erna');
 console.log('====================');
-console.log('getAllDogs');
+console.log('GET ALL DOGS');
 console.log(getAllDogs());
 
 deleteDogById(0);
 console.log('====================');
-console.log('getAllDogs');
+console.log('GET ALL DOGS');
 console.log(getAllDogs());
 
 console.log('====================');
-console.log('getDogById');
+console.log('GET DOG BY ID');
 console.log(getDogById(0));
 console.log(getDogById(1));
 
 console.log('====================');
-console.log('getDogByName');
+console.log('GET DOG BY NAME');
 console.log(getDogByName('Erna3'));
 console.log(getDogByName('Kapsel'));
 
 console.log('====================');
-console.log('deleteLastDog')
+console.log('DELETE LAST DOG')
 console.log(deleteLastDog());
 console.log('====================');
-console.log('getAllDogs');
+console.log('GET ALL DOGS');
