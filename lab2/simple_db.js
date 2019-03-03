@@ -36,23 +36,33 @@ var erna3 = {
 //   dogs.push(new Dog('Erna', 'German Shepherd', 11, ['beef', 'groats'], false));
 // }
 
-function createDog(newDog) {
-  var found = dogs.some(function(dog) {
-    return dog.name === newDog.name;
+function createDog(dog) {
+  var found = dogs.some(function(d) {
+    return d.name === dog.name;
   });
-  if (!found) { dogs.push(newDog); }
-  else { (console.log(newDog.name + ' already exists!')); }
+  if (!found) { dogs.push(dog); }
+  else { (console.log(dog.name + ' already exists!')); }
 }
 
-function deleteDog(dogName) {
-  dogs = dogs.filter(function(d) { return d.name != dogName; });
+function deleteDogByName(name) {
+  dogs = dogs.filter(function(d) { return d.name != name; });
 }
 
-function updateDog()
+function deleteDogById(id) {
+  dogs.splice(id, 1);
+}
+
+function getAllDogs() {
+  return dogs;
+}
+
+// function updateDog()
 
 createDog(erna);
 createDog(erna);
 createDog(erna2);
 createDog(erna3);
-deleteDog('Erna');
-console.log(dogs);
+deleteDogByName('Erna');
+console.log(getAllDogs());
+deleteDogById(0);
+console.log(getAllDogs());
