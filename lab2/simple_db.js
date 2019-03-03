@@ -8,6 +8,14 @@ var erna = {
   isMale: false,
 }
 
+var atos = {
+  name: 'Atos',
+  breed: 'Mutt',
+  age: 13,
+  snacks: ['chicken', 'groats'],
+  isMale: true,
+}
+
 var max = {
   name: 'Max',
   breed: 'Bernardine',
@@ -87,14 +95,30 @@ function getLastDog() {
   if ( dogs.length > 0 ) { return dogs[dogs.length-1]; }
 }
 
+// UPDATE
+function updateDogById(id, dog) {
+  if (dogs.length > id) { dogs[id] = dog; }
+  else { return 'Dog with index: ' + id + ' does not exist! You can not update!'; }
+}
 
+function updateDogByName(name, dog) {
+  var index = dogs.findIndex(function(d) { return d.name == name; });
+  if (typeof(index) !== 'undefined') { dogs[index] = dog }
+  else { return 'Dog with name: ' + name + ' does not exist! You can not update!'; }
+}
 
-// function updateDog()
 
 createDog(erna);
 createDog(erna);
 createDog(max);
 createDog(kapsel);
+updateDogById(0, atos);
+
+console.log('====================');
+console.log('getAllDogs');
+console.log(getAllDogs());
+updateDogByName('Atos', erna);
+console.log(updateDogById(4, atos));
 console.log('====================');
 console.log(getFirstDog());
 console.log(getLastDog());
