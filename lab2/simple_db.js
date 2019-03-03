@@ -5,7 +5,7 @@ var erna = {
   breed: 'German Shepherd',
   age: 11,
   snacks: ['beef', 'chicken', 'groats'],
-  isMale: true,
+  isMale: false,
 }
 
 var erna2 = {
@@ -13,7 +13,7 @@ var erna2 = {
   breed: 'German Shepherd',
   age: 11,
   snacks: ['beef', 'chicken', 'groats'],
-  isMale: true,
+  isMale: false,
 }
 
 var erna3 = {
@@ -21,7 +21,7 @@ var erna3 = {
   breed: 'German Shepherd',
   age: 11,
   snacks: ['beef', 'chicken', 'groats'],
-  isMale: true,
+  isMale: false,
 }
 
 // function Dog(name, breed, age, snakcs, isMale) {
@@ -56,6 +56,17 @@ function getAllDogs() {
   return dogs;
 }
 
+function getDogByName(name) {
+  var foundDog = dogs.filter(function(d) { return d.name === name; });
+  if (foundDog.length > 0) { return foundDog[0]; }
+  else { return 'Dog with name: ' + name + ' does not exist!'; } 
+}
+
+function getDogById(id) {
+  if (dogs.length > id) { return dogs[id]; }
+  else { return 'Dog with index: ' + id + ' does not exist!'; }
+}
+
 // function updateDog()
 
 createDog(erna);
@@ -63,6 +74,18 @@ createDog(erna);
 createDog(erna2);
 createDog(erna3);
 deleteDogByName('Erna');
+console.log('====================');
 console.log(getAllDogs());
+
 deleteDogById(0);
+console.log('====================');
 console.log(getAllDogs());
+
+console.log('====================');
+console.log(getDogById(0));
+console.log(getDogById(1));
+
+console.log('====================');
+console.log('====================');
+console.log(getDogByName('Erna3'));
+console.log(getDogByName('Kapsel'));
