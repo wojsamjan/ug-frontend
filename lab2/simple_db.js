@@ -8,6 +8,22 @@ var erna = {
   isMale: true,
 }
 
+var erna2 = {
+  name: 'Erna2',
+  breed: 'German Shepherd',
+  age: 11,
+  snacks: ['beef', 'chicken', 'groats'],
+  isMale: true,
+}
+
+var erna3 = {
+  name: 'Erna3',
+  breed: 'German Shepherd',
+  age: 11,
+  snacks: ['beef', 'chicken', 'groats'],
+  isMale: true,
+}
+
 // function Dog(name, breed, age, snakcs, isMale) {
 //   this.name = name;
 //   this.breed = breed;
@@ -25,9 +41,18 @@ function createDog(newDog) {
     return dog.name === newDog.name;
   });
   if (!found) { dogs.push(newDog); }
-  else { (console.log('Can not add a dog that already exists!')); }
+  else { (console.log(newDog.name + ' already exists!')); }
 }
+
+function deleteDog(dogName) {
+  dogs = dogs.filter(function(d) { return d.name != dogName; });
+}
+
+function updateDog()
 
 createDog(erna);
 createDog(erna);
+createDog(erna2);
+createDog(erna3);
+deleteDog('Erna');
 console.log(dogs);
