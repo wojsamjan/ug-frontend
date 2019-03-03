@@ -4,24 +4,24 @@ var erna = {
   name: 'Erna',
   breed: 'German Shepherd',
   age: 11,
-  snacks: ['beef', 'chicken', 'groats'],
+  snacks: ['chicken', 'groats'],
   isMale: false,
 }
 
-var erna2 = {
-  name: 'Erna2',
-  breed: 'German Shepherd',
-  age: 11,
-  snacks: ['beef', 'chicken', 'groats'],
-  isMale: false,
+var max = {
+  name: 'Max',
+  breed: 'Bernardine',
+  age: 4,
+  snacks: ['beef', 'chicken', 'vegetables'],
+  isMale: true,
 }
 
-var erna3 = {
-  name: 'Erna3',
-  breed: 'German Shepherd',
-  age: 11,
-  snacks: ['beef', 'chicken', 'groats'],
-  isMale: false,
+var kapsel = {
+  name: 'Kapsel',
+  breed: 'Rottweiler',
+  age: 7,
+  snacks: ['beef', 'groats'],
+  isMale: true,
 }
 
 // function Dog(name, breed, age, snakcs, isMale) {
@@ -44,12 +44,16 @@ function createDog(dog) {
   else { (console.log(dog.name + ' already exists!')); }
 }
 
+function deleteDogById(id) {
+  dogs.splice(id, 1);
+}
+
 function deleteDogByName(name) {
   dogs = dogs.filter(function(d) { return d.name != name; });
 }
 
-function deleteDogById(id) {
-  dogs.splice(id, 1);
+function deleteLastDog() {
+  return dogs.pop();
 }
 
 function getAllDogs() {
@@ -71,21 +75,30 @@ function getDogById(id) {
 
 createDog(erna);
 createDog(erna);
-createDog(erna2);
-createDog(erna3);
+createDog(max);
+createDog(kapsel);
 deleteDogByName('Erna');
 console.log('====================');
+console.log('getAllDogs');
 console.log(getAllDogs());
 
 deleteDogById(0);
 console.log('====================');
+console.log('getAllDogs');
 console.log(getAllDogs());
 
 console.log('====================');
+console.log('getDogById');
 console.log(getDogById(0));
 console.log(getDogById(1));
 
 console.log('====================');
-console.log('====================');
+console.log('getDogByName');
 console.log(getDogByName('Erna3'));
 console.log(getDogByName('Kapsel'));
+
+console.log('====================');
+console.log('deleteLastDog')
+console.log(deleteLastDog());
+console.log('====================');
+console.log('getAllDogs');
